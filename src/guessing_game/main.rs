@@ -1,6 +1,7 @@
-use std::{cmp::Ordering,io};
 use rand::Rng;
+use std::{cmp::Ordering, io};
 
+#[allow(unused)]
 pub fn main() {
     println!("Guess the number between 1 to 100");
     let secret_number: u8 = rand::thread_rng().gen_range(1..=100);
@@ -15,7 +16,7 @@ pub fn main() {
 
         let guess: u8 = match guess.trim().parse() {
             Ok(num) => num,
-            Err(_) => continue
+            Err(_) => continue,
         };
 
         match guess.cmp(&secret_number) {
